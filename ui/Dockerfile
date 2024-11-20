@@ -12,8 +12,16 @@ RUN npm install
 # Copy the rest of the application code into the container
 COPY . .
 
+# Debugging
+RUN ls -R /ui
+RUN ls -R /ui/public
+RUN ls -R /ui/src
+# && sleep infinity
+
 # Build the React app
 RUN npm run build
+# RUN ls -R /ui && ls -R /ui/src && ls -R /ui/public && sleep infinity
+
 
 # Expose port 3000
 EXPOSE 3000
