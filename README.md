@@ -7,7 +7,7 @@ Use Docker
 FastAPI Backend
 React Front End
 Tailwind Styling (Daisy or Flowbite?)
-
+Apparently we don't need a backend with Meyda.
 
 
 ### Suggested Folder Structure as the App Grows ###
