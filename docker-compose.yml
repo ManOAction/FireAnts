@@ -1,13 +1,20 @@
 services:
   app:
-    build: ./app
+    build:
+      context: ./app
+    volumes:
+      - ./app:/app
     ports:
       - "8000:8000"
     networks:
       - fireants_network
 
   ui:
-    build: ./ui
+    build:
+      context: ./ui
+    volumes:
+      - ./ui:/usr/src/app
+      - /usr/src/app/node_modules
     ports:
       - "3000:3000"
     networks:

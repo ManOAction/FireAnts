@@ -11,7 +11,7 @@ const HelloButton: React.FC = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ name: 'Sample Item' }),
+                body: JSON.stringify({ name: 'Hello Message' }),
             });
             const data = await response.json();
             setMessage(data.message);

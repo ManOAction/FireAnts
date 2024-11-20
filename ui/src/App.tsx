@@ -4,7 +4,8 @@ import Header from './components/Header.tsx';
 import Footer from './components/Footer.tsx';
 import Navigation from './components/Navigation.tsx';
 import HelloButton from './components/HelloButton.tsx';
-import ItemList from './components/ItemList.tsx';
+import AudioProcessor from './components/AudioProcessor.tsx';
+import LogCard from './components/LogCard.tsx';
 
 const App: React.FC = () => {
     return (
@@ -15,7 +16,7 @@ const App: React.FC = () => {
 
             <main className="flex-grow container mx-auto px-4 py-8">
                 <HelloButton />
-                <ItemList />
+                <AudioProcessor />
             </main>
 
             <Footer />
