@@ -1,32 +1,26 @@
-import React, { useState } from "react";
+// src/App.tsx
+import React from 'react';
+import Header from './components/Header.tsx';
+import Footer from './components/Footer.tsx';
+import Navigation from './components/Navigation.tsx';
+import HelloButton from './components/HelloButton.tsx';
+import ItemList from './components/ItemList.tsx';
 
-const HelloButton: React.FC = () => {
-    const [message, setMessage] = useState<string>("");
-
-    const handleClick = async () => {
-        try {
-            const response = await fetch('http://localhost:8000/items/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ name: 'Sample Item' }),
-            });
-            const data = await response.json();
-            setMessage(data.message);
-        } catch (error) {
-            console.error("Error fetching message: ", error);
-        }
-    };
-
+const App: React.FC = () => {
     return (
-        <div className="flex flex-col items-center">
-            <button className="btn btn-primary" onClick={handleClick}>
-                Say Hello
-            </button>
-            {message && <p className="mt-4 text-xl">{message}</p>}
+        <div className="min-h-screen flex flex-col">
+            <Header />
+
+            <Navigation />
+
+            <main className="flex-grow container mx-auto px-4 py-8">
+                <HelloButton />
+                <ItemList />
+            </main>
+
+            <Footer />
         </div>
     );
 };
 
-export default HelloButton;
+export default App;
