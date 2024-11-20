@@ -1,14 +1,19 @@
-  version: '3'
+services:
+  app:
+    build: ./app
+    ports:
+      - "8000:8000"
+    networks:
+      - fireants_network
 
-  services:
-    app:
-      build: ./app
-      ports:
-        - "8000:8000"
+  ui:
+    build: ./ui
+    ports:
+      - "3000:3000"
+    networks:
+      - fireants_network
+    depends_on:
+      - app
 
-    ui:
-      build: ./ui
-      ports:
-        - "3000:3000"
-      depends_on:
-        - app
+networks:
+  fireants_network:
